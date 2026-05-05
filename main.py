@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from .database import engine
-from .DBModels import Base
-from .routers import users, projects, tasks, auth
+from database import engine
+from DBModels import Base
+from routers import users, projects, tasks, auth
 
 
 

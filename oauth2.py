@@ -2,8 +2,8 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 from datetime import datetime as dt, timedelta
-from Task_Management_Saas_Project import schemas
-from .import config
+from schemas import *
+import config
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 # ----------------------Three components require for creating Token-------------------------------
@@ -25,7 +25,7 @@ def verify_access_token(token:str, credential_exceptions):
         user_id = payload.get("user_id")
         if not user_id:
             raise credential_exceptions
-        token_data = schemas.TokenData(token_user_id=user_id)
+        token_data = TokenData(token_user_id=user_id)
         return token_data
     except JWTError:
         raise credential_exceptions
