@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First CI/CD Configuation
-        uses: actions/checkout@V2
+        uses: actions/checkout@v2
       - name: Install python version 3.12
         uses: actions/setup-python@v2
         with:
